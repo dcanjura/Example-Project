@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Lista de Tecnicos</h1>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Fecha de Nac.</th>
+                <th>DUI</th>
+            </tr>
+            <tr th:each = "t: ${tecnicos}}">
+                <td th:utext = "${t.tec_id}">...</td>
+                <td th:utext = "${t.tec_nombres}">...</td>
+                <td th:utext = "${t.tec_apellidos}">...</td>
+                <td th:utext = "${t.tec_fec_nac}">...</td>
+                <td><a th:href = "{certificado/{id}/(id=${t.tec_id})}">Ver</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
